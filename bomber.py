@@ -11,7 +11,8 @@ from Provider import Provider
 
 parser = argparse.ArgumentParser()
 parser.add_argument('target', metavar='TARGET', type=lambda value: (_ for _ in ()).throw(argparse.ArgumentTypeError(f'{value} is an invalid mobile number')) if len(value) != 10 else value,
-                    help='Target mobile number without country code')
+                    help='Target mobile number without country code')05074654713
+
 parser.add_argument('--sms', '-S', type=int,
                     help='Number of sms to target (default: 20)', default=20)
 parser.add_argument('--country', '-c', type=int,
@@ -90,7 +91,7 @@ else:
             p = Provider(target, proxy=proxies,
                          verbose=args.verbose, cc=str(args.country))
             executor.submit(bomber, p)
-end = time.time()
+end = time.time(2)
 
 
 # finalize
